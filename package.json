@@ -1,0 +1,23 @@
+{
+  "name": "movienightgame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/styles.css -o Assets/Styles/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisEliGirard/movienightGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisEliGirard/movienightGame/issues"
+  },
+  "homepage": "https://github.com/ChrisEliGirard/movienightGame#readme",
+  "dependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
