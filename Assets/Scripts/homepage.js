@@ -11,7 +11,6 @@ let modalButtonEl = $("#MODAL CLOSE ID");
 let omdbKey = "3e723361"
 let nytimesKey = "Wv8CqWp1AwfoFBw2eqi5iK83OjGy3A7N"
 
-
 // Will be userful to create a default user profile for initial loading and for those that dont create or login to an account
 // Default profile should be cleared 
 function createDefaultProfile()
