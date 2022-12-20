@@ -9,6 +9,7 @@ $(function ()
     let questionEl = $("#question");
     let answersEl = $("#answers");
     let triviaSectionEl = $("#trivia-section");
+    let triviaButtonsEl = $("#trivia-buttons")
 
     // Global Variables
     let omdbKey = "3e723361";
@@ -41,6 +42,7 @@ $(function ()
         // Clear elements
         questionEl.empty("p");
         answersEl.empty("ul");
+        triviaButtonsEl.empty("button");
 
         if (index < triviaQAs.length)
         {
@@ -102,14 +104,9 @@ $(function ()
         // Called from checkAnswer() when correct answer is selected or from runTimer() when time runs out
         // Highlight correct answer; Maybe display hint (remove clickability from answers)
         // Display Next and More Info buttons
-        // Next calls displayNextQA(); More Info calls loadResults()
-        $("<button>", { "id": "add-favorites" }).text("Save Movie").appendTo(triviaSectionEl)
+        $("<button>", { "id": "add-favorites" }).text("Save Movie").appendTo(triviaButtonsEl);
+        $("<button>", { "id": "next-question" }).text("Next Question").appendTo(triviaButtonsEl);
     }
-
-
-    // function addToFavorites(event){
-    //     console.log(answersEl.children("li.correct").text());
-    // }
 
     function loadResults()
     {
@@ -269,4 +266,5 @@ $(function ()
         let title = answersEl.children("li.correct").text();
         requestAPI(`http://www.omdbapi.com/?t=${title}&type=movie&r=json&apikey=${omdbKey}`, createMovieObj);
     })
+    triviaSectionEl.on("click", "#next-question", displayNextQA);
 });

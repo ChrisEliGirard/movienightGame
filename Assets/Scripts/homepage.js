@@ -79,34 +79,6 @@ $(function ()
         setSessionStorage(storedProfile.name, "currentProfile");
     }
 
-    function addToFavorites(obj)
-    {
-        // Add the selected movie object to the profile favorites
-        let profile = getSessionStorage("currentProfile")[0];
-
-        // Make sure the movie title doesn
-        if (profile.favorites.length > 0)
-        {
-            for (let i = 0; i < profile.favorites.length; i++)
-            {
-                if (obj.name === profile.favorites[i].name)
-                {
-                    profile.favorites.splice(i, 1);
-                }
-            }
-
-            profile.favorites.push(obj);
-
-            // Now that the movie is added we have to reach out to nytimes for the review link
-            requestAPI(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${obj.name.split(" ").join("+")}&api-key=${nytimesKey}`, addReviewToMovieObj);
-        } else
-        {
-            profile.favorites = [obj];
-        }
-
-        setLocalStorage(profile, profile.name);
-    }
-
     function displayProfileMovieCarousel()
     {
         // Load movies from list stored with the users profile
@@ -192,6 +164,34 @@ $(function ()
 
         // setLocalStorage(movieObj, "movieObjects");
         addToFavorites(movieObj);
+    }
+
+    function addToFavorites(obj)
+    {
+        // Add the selected movie object to the profile favorites
+        let profile = getSessionStorage("currentProfile")[0];
+
+        // Make sure the movie title doesn
+        if (profile.favorites.length > 0)
+        {
+            for (let i = 0; i < profile.favorites.length; i++)
+            {
+                if (obj.name === profile.favorites[i].name)
+                {
+                    profile.favorites.splice(i, 1);
+                }
+            }
+
+            profile.favorites.push(obj);
+
+            // Now that the movie is added we have to reach out to nytimes for the review link
+            requestAPI(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${obj.name.split(" ").join("+")}&api-key=${nytimesKey}`, addReviewToMovieObj);
+        } else
+        {
+            profile.favorites = [obj];
+        }
+
+        setLocalStorage(profile, profile.name);
     }
 
     function addReviewToMovieObj(value)
