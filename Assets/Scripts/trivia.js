@@ -1,5 +1,6 @@
+//<<<<<<< HEAD
 var timerE1 = document.getElementById('countdown');
-var requestUrl = "https://opentdb.com/api_config.php";
+var requestUrl = "https://opentdb.com/api.php?amount=10";
 
 function countdown() {
     var timeLeft = 90;
@@ -22,13 +23,84 @@ function countdown() {
           return response.json();
         })
         .then(function (data) {
+          console.log(data.length);
           for (var i = 0; i < data.length; i++) {
-      //      var listItem = document.createElement("li");
-      //      listItem.textContent = data[i].html_url;
-      //      repoList.appendChild(listItem);
-            console.log(data);
+            console.log(i);
+            console.log(data[i].category);
           }
         });
     }
+//=======
+// Carry over functions to handle Nav bar functions
+// Carry over functions to handle set/get to local and session storage 
+
+function getTriviaQA()
+{
+    // Still need to figure out how to generate QAs - either a prefab list or finding another API
+}
+
+function displayStartButton()
+{
+    // Page should load with simple list of rules and Start button
+}
+
+function startTrivia()
+{
+    // Display timer, question with clickable answers
     countdown();
     getApi();
+}
+
+function displayNextQA()
+{
+    // Randomly or sequentially iterate through array of QAs
+}
+
+function runTimer()
+{
+    // If timer runs out - displayCorrectAnswer()
+}
+
+function checkAnswer()
+{
+    // Do something when wrong/right answer; Limit number of guesses
+    // Display hint if wrong answer
+    // Once guess limit is hit or correct answer selected then displayCorrectAnswer() 
+}
+
+function displayCorrectAnswer()
+{
+    // Called from checkAnswer() when correct answer is selected or from runTimer() when time runs out
+    // Highlight correct answer; Maybe display hint (remove clickability from answers)
+    // Display Next and More Info buttons
+    // Next calls displayNextQA(); More Info calls loadResults()
+}
+
+function loadResults()
+{
+    // Store movie title in sessionStorage
+    // Load Results page
+}
+
+function getSessionStorage()
+{
+
+}
+
+function setSessionStorage()
+{
+   
+}
+
+// Trivia on(click/submit) events
+// on click for Start button
+// on click for Answer buttons
+// on click for Next button
+// on click for MoreInfo button
+
+// Global on(click/submit) events
+// on click for Login
+// on click for Home
+
+startTrivia();
+//>>>>>>> d93e6a24626e8afe88d1df7b8ae9c493ca8919cb
