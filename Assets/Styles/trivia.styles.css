@@ -1,0 +1,150 @@
+:root {
+    --primaryColor: #e0876a;
+    --secondaryColor: #f4a688;
+    --borderColor: #a2836e;
+    --mainFontColor: #fff2df;
+    --linkFontColor: #fbefcc;
+    --background: #674d3c;
+    --borderColor: #d9ad7c;
+
+
+}
+
+      #menu-toggle:checked + #menu {
+        display: block;
+      }
+  
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Audiowide", sans-serif;
+}
+
+body {
+    background-color: var(--borderColor);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--primaryColor);
+    font-family: "Audiowide", sans-serif;
+}
+
+h1,
+h2,
+p {
+    color: var(--mainFontColor);
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    background-color: var(--background);
+    justify-content: space-around;
+    width: 45%;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.quiz-box {
+    width: 550px;
+    background: var(--borderColor);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.2);
+    width: 60px;
+    overflow: hidden;
+
+}
+
+.quiz-container {
+    padding: 4rem;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--background);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: var(--borderColor);
+}
+
+h2 {
+    padding: 1rem;
+    text-align: center;
+    margin: 0px;
+    font-size: x-large;
+    font-weight: bold;
+
+    color: var(--borderColor) 
+}
+    
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+ul li{
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+ul li label{
+cursor: pointer;
+
+}
+button{
+    background-color: #a2836e;
+    color: #d9ad7c;
+    border: none;
+    display:block ;
+    width:100%;
+    cursor: pointer;
+    font: size 1.1em;
+    font-family:inherit;
+    padding: 1.1rem;
+}
+button:hover{
+background-color:var(--linkFontColor);
+}
+button:focus{
+    outline: none;
+    background-color: var(--linkFontColor);
+}
