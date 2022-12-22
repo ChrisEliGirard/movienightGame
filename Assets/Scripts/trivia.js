@@ -1,7 +1,12 @@
 //<<<<<<< HEAD
 var timerE1 = document.getElementById('countdown');
 var requestUrl = "https://opentdb.com/api.php?amount=10&category=11";
-var myArray = [];
+const myArray = [];
+var singleQuestion = {
+  "question": "",
+  "correctAnswer": "",
+  "incorrectAnswers": []
+};
 function countdown() {
     var timeLeft = 90;
 
@@ -24,23 +29,22 @@ function countdown() {
         })
         .then(function (data) {
           for (var i = 0; i < data.results.length; i++) {
-      //      console.log(data.results[i].question);
-      //      console.log(data.results[i].correct_answer);
-      //      console.log(data.results[i].incorrect_answers)
-            myArray[i].question = data.results[i].question;
-            myArray[i].correct_answer = data.results[i].correct_answer;
-            myArray[i].incorrect_answers = data.results[i].incorrect_answers;
+            singleQuestion.question = data.results[i].question;
+            singleQuestion.correctAnswer = data.results[i].correct_answer;
+            singleQuestion.incorrectAnswers = data.results[i].incorrect_answers;
+            myArray.push(singleQuestion);
+            console.log(myArray.length);
             console.log(myArray[i].question);
-            console.log(myArray[i].correct_answer);
-            console.log(myArray[i].incorrect_answers);
+            console.log(myArray[i].correctAnswer);
+            console.log(myArray[i].incorrectAnswers);
           }
         });
         console.log("My array starts");
         console.log(myArray.length);
         for (var k = 0; k < myArray.length; k++) {
           console.log(myArray[k].question);
-          console.log(myArray[k].correct_answer);
-          console.log(myArray[k].incorrect_answers);
+          console.log(myArray[k].correctAnswer);
+          console.log(myArray[k].incorrectAnswers);
         }
     }
 //=======
