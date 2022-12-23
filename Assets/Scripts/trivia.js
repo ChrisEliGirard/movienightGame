@@ -1,12 +1,7 @@
 //<<<<<<< HEAD
 var timerE1 = document.getElementById('countdown');
-var requestUrl = "https://opentdb.com/api.php?amount=10&category=11";
-const myArray = [];
-var singleQuestion = {
-  "question": "",
-  "correctAnswer": "",
-  "incorrectAnswers": []
-};
+
+;
 function countdown() {
     var timeLeft = 90;
 
@@ -22,6 +17,9 @@ function countdown() {
     }
 
     function getApi() {
+
+      var requestUrl = "https://opentdb.com/api.php?amount=10&category=11";
+      var myArray = [];
     
       fetch(requestUrl)
         .then(function (response) {
@@ -29,23 +27,20 @@ function countdown() {
         })
         .then(function (data) {
           for (var i = 0; i < data.results.length; i++) {
+            var singleQuestion = {
+              "question": "",
+              "correctAnswer": "",
+              "incorrectAnswers": []
+            };
             singleQuestion.question = data.results[i].question;
             singleQuestion.correctAnswer = data.results[i].correct_answer;
             singleQuestion.incorrectAnswers = data.results[i].incorrect_answers;
             myArray.push(singleQuestion);
-            console.log(myArray.length);
-            console.log(myArray[i].question);
-            console.log(myArray[i].correctAnswer);
-            console.log(myArray[i].incorrectAnswers);
           }
         });
-        console.log("My array starts");
-        console.log(myArray.length);
-        for (var k = 0; k < myArray.length; k++) {
-          console.log(myArray[k].question);
-          console.log(myArray[k].correctAnswer);
-          console.log(myArray[k].incorrectAnswers);
-        }
+        console.log(myArray);
+        return myArray;
+        
     }
 //=======
 // Carry over functions to handle Nav bar functions
@@ -65,12 +60,24 @@ function startTrivia()
 {
     // Display timer, question with clickable answers
     countdown();
-    getApi();
+    var quizArray = getApi();
+    var startpoint = 0;
+    displayNextQA(startpoint, quizArray);
+
 }
 
-function displayNextQA()
+function displayNextQA(startpoint, quizArray)
 {
     // Randomly or sequentially iterate through array of QAs
+    console.log("Quiz", quizArray);
+    var body = document.body;
+    var theQuestion = document.createElement("p");
+    console.log(quizArray[0]);
+    theQuestion.textContent = quizArray[startpoint].question;
+    var correct = document.getElementById(a_text);
+  //  correct.textContent=quizArray[0].correctAnswer;
+    var incorrect1 = document.getElementById(b_text);
+  //  incorrect1.textContent=quizArray[0].incorrectAnswers[0];
 }
 
 function runTimer()
