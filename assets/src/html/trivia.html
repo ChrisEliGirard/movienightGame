@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="../../dst/css/outstyle.css">
+    <title>Trivia</title>
+</head>
+
+<body class="text-mainFontColor font-body bg-background">
+
+    <section>
+        <header class="lg:px-16 px-6 bg-secondary flex flex-wrap items-center lg:py-0 py-2">
+            <div class="flex-1 flex justify-between items-center">
+                <a href="#"><strong class="text-2xl text-white shadow-sm">Not Another Movie Generator</strong></a>
+            </div>
+
+            <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-mainFontColor"
+                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <title>menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg></label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+
+            <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+                <nav>
+                    <ul class="lg:flex items-center justify-between text-base text-white pt-4 lg:pt-0">
+                        <li>
+                            <a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
+                                id="home-button">Home</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </section>
+
+    <main>
+        <section>
+            <div class="div bg-tertiary m-4 py-12 grid place-content-center">
+                <a class="text-2xl font-extrabold">Trivia Time!</a>
+            </div>
+        </section>
+
+        <section id="trivia-section" class="bg-tertiary m-4 px-2 py-8 grid place-content-center">
+            <div class="container text-left">
+                <div>
+                    <h3 id="timer"></h3>
+                </div>
+                <div>
+                    <div id="question">
+                        <!-- Question Generated in JS -->
+                    </div>
+                    <div id="answers">
+                        <!-- Answers Generated in JS -->
+                    </div>
+                </div>
+                <div id="trivia-buttons">
+                    <!-- Buttons Generated in JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Modal -->
+        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+            id="error-modal" tabindex="-1" aria-labelledby="error-modalLabel" aria-hidden="true">
+            <div class="modal-dialog relative w-auto pointer-events-none">
+                <div
+                    class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                    <div
+                        class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                        <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalLabel">Oops something went
+                            wrong.</h5>
+                        <button type="button"
+                            class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body relative p-4 text-black">
+                        <!-- Content Generated in JS -->
+                    </div>
+                    <div
+                        class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                        <button type="button"
+                            class="px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                            data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../../../node_modules/tw-elements/dist/js/index.min.js"></script>
+<script src="../js/trivia.js"></script>
+
+</html>
