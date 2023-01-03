@@ -14,7 +14,7 @@ N/A as it runs in the browser.
 ## Preview
 The following images demonstrates the applications functionality
 
-![The Not Another Movie Generator website allows users to search any movie but particularly to be used to search for movies they want to find out more about after hearing about them in their trivia game. the main page allows a user to login and store movies as a watchlist and keep track of the users quiz results (feature in development) the main page is also where when you search or click on a movie the result will be displayed. If you click the start trivia page you will be redirected to the trivia html where you will begin the quiz) ](./assets/images/homepage.png) (./assets/images/triviapage.png)
+![The Not Another Movie Generator website allows users to search any movie but particularly to be used to search for movies they want to find out more about after hearing about them in their trivia game. the main page allows a user to login and store movies as a watchlist and keep track of the users quiz results (feature in development) the main page is also where when you search or click on a movie the result will be displayed. If you click the start trivia page you will be redirected to the trivia html where you will begin the quiz) ](./assets/images/homepage.png)
 
 ## Usage
 
